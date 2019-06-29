@@ -1,0 +1,39 @@
+{
+  "builders": [
+    {
+      "type": "azure-arm",
+
+      "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "tenant_id": "28d9b350-0858-4446-afda-ac40562918fa",
+      "subscription_id": "f7de21bd-b0a0-440b-9966-4fba88e13e89",
+
+      "managed_image_resource_group_name": "production",
+      "managed_image_name": "blue-green-{{timestamp}}",
+
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "16.04-LTS",
+
+      "azure_tags": {
+        "dept": "Engineering",
+        "task": "Image deployment"
+      },
+
+      "location": "West Europe",
+      "vm_size": "Standard_DS2_v2"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "./scripts/node.sh"
+    },
+    {
+      "type": "file",
+      "source": "./app",
+      "destination": "/home/packer/"
+    }
+  ]
+}
