@@ -21,7 +21,7 @@ data "aws_ami" "green" {
 
 resource "aws_security_group" "ec2-green" {
   count       = var.enable_green ? 1 : 0
-  name        = "terraform-blue-ec2"
+  name        = "terraform-green-ec2"
   description = "Allow TLS inbound traffic"
   vpc_id      = "${aws_vpc.this.id}"
 
@@ -90,7 +90,7 @@ resource "aws_autoscaling_group" "green" {
 
 resource "aws_security_group" "green-lb-sg" {
   count = var.enable_green ? 1 : 0
-  name = "terraform-blue-alb"
+  name = "terraform-green-alb"
   description = "Allow TLS inbound traffic"
   vpc_id = "${aws_vpc.this.id}"
 
