@@ -59,3 +59,10 @@ To execute the step 3
 ```
 
 It should outputs the dns name of the new load balancer
+
+### Step 4
+
+Add a continuous integration pipeline
+
+To execute the step 4, create a pull request to trigger a build
+
