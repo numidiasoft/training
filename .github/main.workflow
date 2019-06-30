@@ -9,7 +9,7 @@ action "filter-to-pr-open-synced" {
 }
 
 action "terraform-fmt" {
-  uses = "hashicorp/terraform-github-actions/fmt@v<latest version>"
+  uses = "hashicorp/terraform-github-actions/fmt@v0.3.2"
   needs = "filter-to-pr-open-synced"
   secrets = ["GITHUB_TOKEN"]
   env = {
@@ -18,7 +18,7 @@ action "terraform-fmt" {
 }
 
 action "terraform-init" {
-  uses = "hashicorp/terraform-github-actions/init@v<latest version>"
+  uses = "hashicorp/terraform-github-actions/init@v0.3.2"
   needs = "terraform-fmt"
   secrets = ["GITHUB_TOKEN"]
   env = {
@@ -27,7 +27,7 @@ action "terraform-init" {
 }
 
 action "terraform-validate" {
-  uses = "hashicorp/terraform-github-actions/validate@v<latest version>"
+  uses = "hashicorp/terraform-github-actions/validate@v0.3.2"
   needs = "terraform-init"
   secrets = ["GITHUB_TOKEN"]
   env = {
