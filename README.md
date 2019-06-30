@@ -14,7 +14,7 @@ The project is devided to several branches, each branch represent a step
 
 ### Step 1
 
-Step one creates networks and security rule
+Step one creates networks and security rules
 
 To execute the step 1
 
@@ -40,11 +40,11 @@ To execute the step 2
 > terraform apply
 ```
 
-It should output the dns name of the new load balancer
+It should outputs the dns name of the new load balancer
 
 ### Step 3
 
-Step one creates an packer image and deploy a new version of the web application behind a new load balancer
+Step three creates a packer image and deploy a new version of the web application behind a new load balancer
 
 To execute the step 3
 
