@@ -1,4 +1,4 @@
-# training
+# Training
 Blue Green AWS and Azure use cases
 
 The project is devided to several branch, each branch represent a step
