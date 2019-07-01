@@ -9,6 +9,7 @@ The project is devided to several branches, each branch represent a step
 * An Azure account & the AZ CLI
 * terraform
 * packer
+* yarn
 
  
 
@@ -32,6 +33,8 @@ Step one creates an packer image and deploy a web application behind a load bala
 To execute the step 2
 
 ```shell
+> cd providers/aws/packer/app
+> yarn install
 > cd providers/aws/packer/
 > git checkout step-2
 > packer build ubuntu.json
@@ -49,6 +52,8 @@ Step three creates a packer image and deploy a new version of the web applicatio
 To execute the step 3
 
 ```shell
+> cd providers/aws/packer/app
+> yarn install
 > cd providers/aws/packer/
 > git checkout step-3
 > modify the server.js file
